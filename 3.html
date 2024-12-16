@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ucapan Ulang Tahun</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffdde1, #d7e3fc);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .page {
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .page.active {
+            display: block;
+        }
+        .card {
+            margin: 0 auto;
+            width: 90%;
+            max-width: 500px;
+            background: linear-gradient(to bottom right, #ffdde1, #d7e3fc);
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #ff4081;
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px #ffd1dc;
+        }
+        h2 {
+            color: #80b3ff;
+            margin: 0;
+            font-size: 1.8em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #555;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #777;
+        }
+        .emoji {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Halaman 1 -->
+    <div class="page active" id="page1">
+        <div class="card">
+            <h1>Selamat Ulang Tahun! ✨</h1>
+            <h2>Untuk Kamu yang Selalu Istimewa</h2>
+            <p>
+                Hai kamu, perempuan luar biasa yang selalu membuat hari-hari penuh warna! 🌸<br>
+                Semoga di hari istimewamu ini, kamu merasakan kebahagiaan yang berlimpah dan senyum yang tak pernah pudar. 😊
+            </p>
+            <div class="emoji">
+                🎂 🎉 🎈
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman 2 -->
+    <div class="page" id="page2">
+        <div class="card">
+            <h1>Doa Terbaik untuk Kamu</h1>
+            <p>
+                Semoga semua impianmu segera menjadi kenyataan, dan kebahagiaan selalu bersamamu. 💕<br>
+                Jangan pernah berhenti bersinar seperti bintang di langit malam. Dunia lebih indah karena ada kamu! 🌟
+            </p>
+            <div class="emoji">
+                ✨ 🌠 💖
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman 3 -->
+    <div class="page" id="page3">
+        <div class="card">
+            <h1>Pesan dari Sahabatmu</h1>
+            <p>
+                Terima kasih sudah menjadi dirimu yang ceria dan penuh semangat. Kamu luar biasa, dan aku bangga memiliki sahabat sepertimu! 💙<br>
+                Hari ini adalah awal dari petualangan luar biasa yang menantimu.
+            </p>
+            <div class="emoji">
+                💌 🌷 💫
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function showPage(pageNumber) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach((page, index) => {
+                if (index + 1 === pageNumber) {
+                    page.classList.add('active');
+                } else {
+                    page.classList.remove('active');
+                }
+            });
+        }
+
+        function nextPage() {
+            currentPage = currentPage < totalPages ? currentPage + 1 : 1;
+            showPage(currentPage);
+        }
+
+        document.body.addEventListener('touchstart', nextPage);
+    </script>
+</body>
+</html>
